@@ -109,6 +109,7 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in_fake+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/test_set/test_set/'+directory[i]+'/'+name,image)
               Counter_test = Counter_test + 1 
+            print('A total of '+str(Counter_test)+' fake images of the '+directory[i]+' class were saved in the test set') 
     
             # TRAINING SET
             for m in range(quotaparte_20 +1,quotaparte_90 +1):
@@ -116,6 +117,7 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in_fake+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/training_set/training_set/'+directory[i]+'/'+name,image)
               Counter_train = Counter_train + 1 
+            print('A total of '+str(Counter_train)+' fake images of the '+directory[i]+' class were saved in the training set')
     
             # VALIDATION SET
             for m in range(quotaparte_90 + 1, round(images_num*percentages[i][1])):
@@ -123,8 +125,16 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in_fake+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/val_set/val_set/'+directory[i]+'/'+name,image)
               Counter_val = Counter_val + 1 
+            print('A total of '+str(Counter_val)+' fake images of the '+directory[i]+' class were saved in the training set')
+            print('\n')
+            print('A total of '+str(Counter_test+Counter_train+Counter_val)+' fake images of the '+directory[i]+' class were saved.') 
+            print('\n')
     
     for i in range (0,Num_Classes):
+
+            Counter_test = 0 # Count of total training images saved by class
+            Counter_train = 0 # Count of total training images saved by class
+            Counter_val = 0 # Count of total training images saved by class
         
             images_num = counter(path_in+'/'+directory[i])
         
@@ -139,7 +149,7 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/test_set/test_set/'+directory[i]+'/'+name,image)
               Counter_test = Counter_test + 1
-            print('A total of '+str(Counter_test)+' images of the '+directory[i]+' class were saved in the test set, fake images included.') 
+            print('A total of '+str(Counter_test)+' original images of the '+directory[i]+' class were saved in the test set') 
     
             # TRAINING SET
             for m in range(quotaparte_20 +1,quotaparte_90 +1):
@@ -147,7 +157,7 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/training_set/training_set/'+directory[i]+'/'+name,image)
               Counter_train = Counter_train + 1 
-            print('A total of '+str(Counter_train)+' images of the '+directory[i]+' class were saved in the training set, fake images included.')
+            print('A total of '+str(Counter_train)+' original images of the '+directory[i]+' class were saved in the training set')
     
             # VALIDATION SET
             for m in range(quotaparte_90 + 1, round(images_num)):
@@ -155,7 +165,7 @@ def make_dataset(path_in,path_in_fake,path_out):
               image = img.imread(path_in+'/'+directory[i]+'/'+name)
               img.imsave(path_out+'/val_set/val_set/'+directory[i]+'/'+name,image)
               Counter_val = Counter_val + 1
-            print('A total of '+str(Counter_val)+' images of the '+directory[i]+' class were saved in the training set, fake images included.')
+            print('A total of '+str(Counter_val)+' original images of the '+directory[i]+' class were saved in the training set')
             print('\n')
             print('A total of '+str(Counter_test+Counter_train+Counter_val)+' images of the '+directory[i]+' class were saved.') 
             print('\n')
