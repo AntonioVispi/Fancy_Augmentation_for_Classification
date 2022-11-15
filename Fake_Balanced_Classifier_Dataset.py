@@ -171,7 +171,7 @@ def main():
     parser.add_argument('--path_out', help='output path for saving the final dataset balanced with the fake images')
 
     args = parser.parse_args()
-    Classic_Balance(args.path_in,args.path_in_fake,args.path_out)
+    make_dataset(args.path_in,args.path_in_fake,args.path_out)
     
 if __name__ == '__main__':
     main()
