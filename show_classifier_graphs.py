@@ -46,14 +46,14 @@ def training_graphs(path_in_json,path_out):
           Train_Accuracy.append(sample['top-1'])
   
     #Definition of the abscissa axes. 
-    Epoch_Train = np.linspace(1, 160, num=800)   # Number of epochs sampled to have the same size as Train_Losses and Train_Accuracy
-    Epoch_Val = np.linspace(1, 160, num=160)     # Number of epochs sampled to have the same size as Val_Losses and Val_Accuracy
+    Epoch_Train = np.linspace(1, len(Val_Losses), num=len(Train_Losses))
+    Epoch_Val = np.linspace(1, len(Val_Losses), num=len(Val_Losses))
 
     fig, axs = plt.subplots(1,2, figsize=(20, 15))
     plt.rcParams['font.size'] = 18
 
     plt.sca(axs[0])
-    plt.yticks(np.arange(0, max(max(Val_Losses),max(Train_Losses)), 0.1))
+    plt.yticks(np.arange(0, max(max(Val_Losses),max(Train_Losses)), round(max(max(Val_Losses)/50,max(Train_Losses)/50),2))))
     axs[0].plot(Epoch_Val,Val_Losses,Epoch_Train,Train_Losses)
     axs[0].set_title('Model Losses')
     axs[0].set(xlabel='Epoch')
