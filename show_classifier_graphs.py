@@ -53,7 +53,7 @@ def training_graphs(path_in_json,path_out):
     plt.rcParams['font.size'] = 18
 
     plt.sca(axs[0])
-    plt.yticks(np.arange(0, max(max(Val_Losses),max(Train_Losses)), round(max(max(Val_Losses)/50,max(Train_Losses)/50),2))))
+    plt.yticks(np.arange(0, max(max(Val_Losses),max(Train_Losses)), round(max(max(Val_Losses)/50,max(Train_Losses)/50),2)))
     axs[0].plot(Epoch_Val,Val_Losses,Epoch_Train,Train_Losses)
     axs[0].set_title('Model Losses')
     axs[0].set(xlabel='Epoch')
