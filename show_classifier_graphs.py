@@ -2,7 +2,7 @@
 """
 Created on Wed Nov  9 17:03:26 2022
 
-If necessary, modify the abscissa axes in the abscissa axis definition section.
+
 
 @author: Antonio Vispi
 """
@@ -20,8 +20,7 @@ def load_json_arr(json_path):
             lines.append(json.loads(line))
     return lines
 
-def training_graphs(path_in_json,path_out):
-    print('Note: if a dimension error appears, check the abscissa vector of the graph for correct dimensions.')  
+def training_graphs(path_in_json,path_out): 
 
     experiment_metrics = load_json_arr(path_in_json)
 
