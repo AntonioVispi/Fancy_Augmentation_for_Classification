@@ -263,7 +263,7 @@ def Classic_Augmentation_Super_Telescope (filename, path, Super_Telescope_multip
           Pin = str(random.randint(1, 9999))+'_'
           img.imsave(path+'/'+Pin+str(i)+'_'+filename,transformed_image) # Saving subsequent images subjected to Albumentation
 
-def Classic_Augmentation_Rectangle (filename, path, Rectangle_multiplicator, current_class):
+def Classic_Augmentation_Rectangle (filename, path, Rectangle_multiplicator, current_class, Larger_Classes):
 
      image = img.imread(path+'/'+filename)
 
@@ -427,7 +427,7 @@ def Balance_Dataset(path_in,path_out):
              group = detect_group(filename)
     
              if group == 'R' or group == 'Q':
-               Classic_Augmentation_Rectangle (filename, path_out+'/'+(directory[i]), Rectangle_multiplicator,directory[i])
+               Classic_Augmentation_Rectangle (filename, path_out+'/'+(directory[i]), Rectangle_multiplicator,directory[i], Larger_Classes)
     
              elif group == 'C':
                Classic_Augmentation_Telescope (filename, path_out+'/'+(directory[i]), Telescope_multiplicator)
