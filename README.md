@@ -23,7 +23,7 @@ We now move on to correcting and balancing the dataset. The function below will 
 `path_out` is the path where all the dataset will be saved, corrected and balanced.
 
 ```
-!python Clean_Balancing.py --path_in /.../Initial_Dataset \
+python Clean_Balancing.py --path_in /.../Initial_Dataset \
 --path_out /.../Dataset_Training
 ```
 Now that the images are correct and balanced in number, let's move on to assigning the labels.
