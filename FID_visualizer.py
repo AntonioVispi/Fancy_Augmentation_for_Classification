@@ -40,7 +40,7 @@ def FID_graph(path_results,path_output,dataset_images_num):
     
     figure(figsize=(15,10))
     plt.yticks(np.arange(0, max(all_FID), round(max(all_FID)/30,2)))
-    plt.plot(Epoch_Training_orig,all_FID, color ='r',label = 'FID over epochs', marker='x',markevery=[position])
+    plt.plot(Epoch_Training_orig,all_FID, color ='r',label = 'FID over epochs', marker='-gx', ms = 10, markevery=[position])
     
     plt.xlabel('Epochs')
     plt.ylabel('FID')
