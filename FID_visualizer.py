@@ -29,11 +29,11 @@ def FID_graph(path_results,path_output,dataset_images_num):
     for i in range(0,len(all_FID)):
       all_FID[i]=float(all_FID[i])
 
-    Epoch_Training_orig = np.linspace(0, len(all_FID*20000)/(dataset_images_num), num=len(all_FID))
+    Epoch_Training_orig = np.linspace(0, len(all_FID*20000)/(float(dataset_images_num)), num=len(all_FID))
 
     for i in range (0,len(all_FID)):
       if all_FID[i] == min(all_FID):
-        min_epoch = i*20000/(dataset_images_num)
+        min_epoch = i*20000/(float(dataset_images_num))
         position = i
 
     print('Il minor FID riscontrato è pari a '+str(min(all_FID))+', e si è verificato all epoca numero '+str(round(min_epoch))+', che corrisponde a '+str(position*20)+' kimg.' )
