@@ -40,16 +40,17 @@ python make_json_labels.py --input_folder=/.../Dataset_Training --output_folder=
 ## Note: It is advisable to view the contents of the .json file obtained in this last step to note the correspondence between the labels and the classes. This annotation will be useful in the inference phase of the trained StyleGAN3. Ex: AKIEC corresponds to label 0, BCC corresponds to label 1 etc...
 After this last operation, the folder with the dataset should look like this:
 ```bash
-
-├── Class_1
-├── Class_2
-├── Class_3
-.
-.
-.
-├── Class_n
-│   
-└── dataset.json
+Dataset_Training
+  │  
+  ├── Class_1
+  ├── Class_2
+  ├── Class_3
+  .
+  .
+  .
+  ├── Class_n
+  │   
+  └── dataset.json
 ```
 
 Now that the dataset is fully defined, let's move on to the training phase of [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
