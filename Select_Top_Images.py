@@ -27,6 +27,8 @@ def estimate_sharpness_test(I):
   return sharpness
 
 def Top_images(path_in,path_out,top_images_num):
+  
+    os.makedirs(path_out, exist_ok = True)
 
     directory = os.fsencode(path_in)
       
