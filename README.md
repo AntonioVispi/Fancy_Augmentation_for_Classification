@@ -15,7 +15,7 @@ pip install -U albumentations
 ```
 (Optional step) If among the classes of your dataset, there is one class that is too numerous compared to the others, it is possible to select a subset of better images. The number of images you want will be selected. The selected images have the best resolution of all.
 
-Enter the path of the too numerous class `path_in` and the path where you want the class with the desired number to be saved `path_out`. Also enter the number of images you want. Ex: 5000.
+Enter the path of the too numerous class `path_in` and the path where you want the class with the desired number of images to be saved `path_out`. Also enter the number of images you want. Ex: 5000.
 ```
 python Select_Top_Images.py --path_in /.../NV --path_out /.../Top_NV --top_images_num 5000
 ```
