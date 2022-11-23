@@ -40,8 +40,7 @@ def FID_graph(path_results,path_output,dataset_images_num):
     
     figure(figsize=(15,10))
     plt.yticks(np.arange(0, max(all_FID), round(max(all_FID)/30,2)))
-    plt.plot(Epoch_Training_orig,all_FID, color ='r',label = 'FID over epochs','x',markevery=[position], label='Epoch which corresponds to the lowest FID equal to '+str((min(all_FID))))
-    plt.plot(xs, ys, '-gD', markevery=markers_on, label='line with select markers')
+    plt.plot(Epoch_Training_orig,all_FID, color ='r',label = 'FID over epochs','-x',markevery=[position], label='Epoch which corresponds to the lowest FID equal to '+str((min(all_FID))))
     
     plt.xlabel('Epochs')
     plt.ylabel('FID')
