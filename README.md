@@ -81,9 +81,9 @@ python train.py --outdir /.../Output_train_StyleGAN3 \
 --cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1 \
 --resume=/.../network-snapshot-000060.pkl
 ```
-Once you finish training, it may be helpful to view the FID throughout your entire workout. To do this, the `FID_visualizer.py` function is provided.
+Once you finish training, it may be helpful to view the FID throughout your entire training session. To do this, the `FID_visualizer.py` function is provided.
 
-So let's enter the path where all the training outputs are located, the path where we want the FID graph to be saved, and also the total number of images in the dataset. Ex: 25202.
+So let's enter the `path_results` where all the training outputs are located (Following the example of this tutorial would be /.../Output_train_StyleGAN3), the `path_output` where we want the FID graph to be saved, and also the total number of images in the dataset. Ex: 25202.
 ```
 cd Fancy_Augmentation_for_Classification
 python FID_visualizer.py --path_results /.../Output_train_StyleGAN3 \
@@ -95,8 +95,9 @@ An example FID graph of a complete training from scratch is shown below.
 
 At this point it is possible to make the inference of the trained model as shown in the example below. 
 
-The labels of the specific case are inside the .json file of the previous point.???
+The labels of the specific case are inside the .json file of the previous section expressed in bold.
 You have to insert the label corresponding to the desired class in the entry: `class`.
+`trunc` stands for truncation, by default it is set to 1. For more information consult [StyleGAN3](https://github.com/NVlabs/stylegan3.git). 
 
 Note: the following labels are just an example
 ```
