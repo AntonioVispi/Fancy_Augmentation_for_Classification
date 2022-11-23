@@ -58,6 +58,13 @@ For more information about the training parameters consult the source:[StyleGAN3
 --data /.../Output_dataset_tool \
 --cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1
 ```
+To resume a previous training, run the following block.
+```
+!python train.py --outdir /.../Output_train_StyleGAN3 \
+--data /.../Output_dataset_tool \
+--cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1 \
+--resume=/.../network-snapshot-000060.pkl
+```
 
 
 
