@@ -68,7 +68,7 @@ python dataset_tool.py --source /.../Dataset_Training --dest /.../Output_dataset
 In the path `/.../Output_dataset_tool` the final dataset will be saved to train the StyleGAN3.
 
 Now let's continue with the training of StyleGAN3 with `train.py`. The following block is used to start a new training from scratch.
-For more information about the training parameters consult the source:[StyleGAN3](https://github.com/NVlabs/stylegan3.git).
+For more information about the training parameters consult the source: [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
 ```
 python train.py --outdir /.../Output_train_StyleGAN3 \
 --data /.../Output_dataset_tool \
