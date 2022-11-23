@@ -49,7 +49,7 @@ def FID_graph(path_results,path_output,dataset_images_num):
     plt.legend()
     
         
-    plt.savefig(path_output+'/Graph.png')
+    plt.savefig(path_output+'/FID_raph.png')
     print('\n')
     print('The graph has been saved in the destination path.')
 
