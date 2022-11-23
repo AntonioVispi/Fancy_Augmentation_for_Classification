@@ -3,6 +3,8 @@ Tool for creating a balanced dataset, augmenting it in the classic way, and then
 
 Before discussing the steps, let's say that the repository is divided into two parts: the first dedicated to the reproduction of the result obtained with StyleGAN3, the second dedicated to the reproduction of the result obtained with MMClassification.
 
+This work was done specifically for dermoscopic images. Images are from the ISIC dataset.
+
 # Getting started with GAN section
 
 The first phase is the creation of the dataset. please install:
