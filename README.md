@@ -76,7 +76,9 @@ python FID_visualizer.py --path_results /.../Output_train_StyleGAN3 \
 ```
 An example FID graph of a complete workout from scratch is shown below.
 
-![This is an image](Fancy_Augmentation_for_Classification/Demo/FID_Graph.png)
+
+![Optional Text](AntonioVispi/Fancy_Augmentation_for_Classification/Demo/FID_Graph.png)
+
 
 
 
