@@ -67,6 +67,17 @@ To resume a previous training, run the following block.
 ```
 Once you finish exercising, it may be helpful to view the FID throughout your entire workout. To do this, the `FID_visualizer.py` function is provided.
 
+So let's enter the path where all the training outputs are located, the path where we want the FID graph to be saved, and also the total number of images in the dataset. Ex: 25202.
+```
+cd Fancy_Augmentation_and_Classification
+python FID_visualizer.py --path_results /.../Output_train_StyleGAN3 \
+--path_output /.../FID_graph \
+--dataset_images_num 25202
+```
+An example FID graph of a complete workout from scratch is shown below.
+
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
 
 
 
