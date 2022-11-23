@@ -8,7 +8,7 @@ Before discussing the steps, let's say that the repository is divided into two p
 The first phase is the creation of the dataset. please install:
 ```
 git clone https://github.com/AntonioVispi/Fancy_Augmentation_for_Classification.git
-cd Fancy_Augmentation_and_Classification
+cd Fancy_Augmentation_for_Classification
 pip install -U albumentations
 ```
 (Optional step) If among the classes of your dataset, there is one class that is too numerous compared to the others, it is possible to select a subset of better images. The number of images you want will be selected. The selected images have the best resolution of all.
