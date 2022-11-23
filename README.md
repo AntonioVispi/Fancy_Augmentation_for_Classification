@@ -81,7 +81,7 @@ python train.py --outdir /.../Output_train_StyleGAN3 \
 --cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1 \
 --resume=/.../network-snapshot-000060.pkl
 ```
-Once you finish exercising, it may be helpful to view the FID throughout your entire workout. To do this, the `FID_visualizer.py` function is provided.
+Once you finish training, it may be helpful to view the FID throughout your entire workout. To do this, the `FID_visualizer.py` function is provided.
 
 So let's enter the path where all the training outputs are located, the path where we want the FID graph to be saved, and also the total number of images in the dataset. Ex: 25202.
 ```
