@@ -19,7 +19,7 @@ Enter the path of the too numerous class `path_in` and the path where you want t
 ```
 python Select_Top_Images.py --path_in /.../NV --path_out /.../Top_NV --top_images_num 5000
 ```
-We now move on to correcting and balancing the dataset. The function below will proceed to decrease the black annulus artifact typical of dermatological images from all the images that need it. Furthermore, this function allows to balance all the classes in terms of numbers, based on the most numerous class. The increases will be performed through classic operations (elastic distortions), coming from Albumentation.
+We now move on to correcting and balancing the dataset. The function below will proceed to decrease the black annulus artifact typical of dermatological images from all the images that need it. Furthermore, this function allows to balance all the classes in terms of numbers, based on the most numerous class. The increases will be performed through classic operations (elastic distortions, flips, crops, rotations), coming from [Albumentation](https://github.com/albumentations-team/albumentations.git).
 
 `path_in` is the path containing all the classes of the starting dataset. Note: make sure that only folders containing images of each class are in `path_in`.
 `path_out` is the path where all the dataset will be saved, corrected and balanced.
