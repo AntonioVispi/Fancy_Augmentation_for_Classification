@@ -28,10 +28,13 @@ We now move on to correcting and balancing the dataset. The function below will 
 ```
 Now that the images are correct and balanced in number, let's move on to assigning the labels.
 
-In this phase the .json file containing the labels is created. selected to put the same input and output path, in correspondence with the folder containing the dataset, as indicated in the previous phases.
+In this phase the .json file containing the labels is created. Enter both as `input_folder` and as `output_folder` the same folder where the dataset obtained in the previous step is located. Ex: `/.../Dataset_Training`.
 ```
 git clone https://github.com/JulianPinzaru/stylegan2-ada-pytorch-multiclass-labels.git
 pip install Ninja
 cd stylegan2-ada-pytorch-multiclass-labels
 python make_json_labels.py --input_folder=/.../Dataset_Training --output_folder=/.../Dataset_Training
 ```
+It is advisable to view the contents of the .json file to note the correspondence between the labels and the classes. This annotation will be useful in the inference phase of the trained StyleGAN3. Ex: AKIEC corresponds to label 0, BCC corresponds to label 1 etc...
+
+Now that the dataset is fully defined, let's move on to the training phase of [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
