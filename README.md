@@ -90,6 +90,8 @@ python FID_visualizer.py --path_results /.../Output_train_StyleGAN3 \
 --path_output /.../FID_graph \
 --dataset_images_num 25202
 ```
+This function will display the lowest FID value and the corresponding epoch on the screen.
+
 An example FID graph of a complete training from scratch is shown below.
 ![FID_Graph](https://user-images.githubusercontent.com/102518682/203628618-8aa4ab53-136b-423c-96b4-c3354203f0a5.jpg)
 
