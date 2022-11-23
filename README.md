@@ -74,9 +74,27 @@ python FID_visualizer.py --path_results /.../Output_train_StyleGAN3 \
 --path_output /.../FID_graph \
 --dataset_images_num 25202
 ```
-An example FID graph of a complete workout from scratch is shown below.
+An example FID graph of a complete training from scratch is shown below.
 ![FID_Graph](https://user-images.githubusercontent.com/102518682/203628618-8aa4ab53-136b-423c-96b4-c3354203f0a5.jpg)
 
+At this point it is possible to make the inference of the trained model as shown in the example below. 
+
+The labels of the specific case are inside the .json file of the previous point.???
+You have to insert the label corresponding to the desired class in the entry: `class`.
+
+Note: the following labels are just an example
+```
+#   AKIEC = 0   #
+#   KL = 1      #
+#   MEL = 2     #
+#   NV = 3      #
+#   BCC = 4     #
+
+cd stylegan3
+python gen_images.py --outdir=/.../NV_fake \
+--trunc=1 --seeds='1-5' \                                 # generation of 5 images that will be saved in the folder /.../NV_fake
+--network=/.../network-snapshot-000080.pkl --class=3      # in this example it corresponds to class NV
+```
 
 
 
