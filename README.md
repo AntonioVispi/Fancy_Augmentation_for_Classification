@@ -65,6 +65,7 @@ To resume a previous training, run the following block.
 --cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1 \
 --resume=/.../network-snapshot-000060.pkl
 ```
+Once you finish exercising, it may be helpful to view the FID throughout your entire workout. To do this, the `FID_visualizer.py` function is provided.
 
 
 
