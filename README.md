@@ -38,3 +38,27 @@ python make_json_labels.py --input_folder=/.../Dataset_Training --output_folder=
 It is advisable to view the contents of the .json file to note the correspondence between the labels and the classes. This annotation will be useful in the inference phase of the trained StyleGAN3. Ex: AKIEC corresponds to label 0, BCC corresponds to label 1 etc...
 
 Now that the dataset is fully defined, let's move on to the training phase of [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
+
+```
+git clone https://github.com/NVlabs/stylegan3.git
+cd stylegan3
+conda env create -f environment.yml
+conda activate stylegan3
+```
+Let's run the `dataset_tool.py`, which allows you to make all the images and all the labels in a format suitable for what StyleGAN 3 expects. Adjust the desired resolution. In our case 1024x1024 pixels was used.
+```
+python dataset_tool.py --source /.../Dataset_Training --dest /.../Output_dataset_tool --resolution 1024x1024
+```
+In the path `/.../Output_dataset_tool` the final dataset will be saved to train the StyleGAN3.
+
+Now let's continue with the training of StyleGAN3 with `train.py`. The following block is used to start a new training from scratch.
+For more information about the training parameters consult the source:[StyleGAN3](https://github.com/NVlabs/stylegan3.git).
+```
+!python train.py --outdir /.../Output_train_StyleGAN3 \
+--data /.../Output_dataset_tool \
+--cfg=stylegan3-t --gpus=1 --batch=32 --gamma=32 --batch-gpu=4 --snap=5 --cond True --mirror=1
+```
+
+
+
+
