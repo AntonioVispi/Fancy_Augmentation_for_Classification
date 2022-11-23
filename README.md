@@ -28,7 +28,7 @@ We now move on to correcting and balancing the dataset. The function below will 
 python Clean_Balancing.py --path_in /.../Initial_Dataset \
 --path_out /.../Dataset_Training
 ```
-Now that the images are correct and balanced in number, let's move on to assigning the labels.
+Now that the images have a more regular configuration, and are balanced in number, let's move on to assigning the labels.
 
 In this phase the .json file containing the labels is created. Enter both as `input_folder` and as `output_folder` the same folder where the dataset obtained in the previous step is located. Ex: `/.../Dataset_Training`.
 ```
