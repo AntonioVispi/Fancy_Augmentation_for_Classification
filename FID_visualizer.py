@@ -46,9 +46,8 @@ def FID_graph(path_results,path_output,dataset_images_num):
     plt.ylabel('FID')
     plt.title('FID during training')
     plt.rcParams.update({'font.size': 16})
-      
     plt.legend()
-    plt.show()
+    
         
     plt.savefig(path_output+'/Graph.png')
     print('\n')
