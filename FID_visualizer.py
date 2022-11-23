@@ -39,13 +39,13 @@ def FID_graph(path_results,path_output,dataset_images_num):
     print('Il minor FID riscontrato è pari a '+str(min(all_FID))+', e si è verificato all epoca numero '+str(round(min_epoch))+', che corrisponde a '+str(position*20)+' kimg.' )
     
     figure(figsize=(15,10))
+    plt.rcParams.update({'font.size': 16})
     plt.yticks(np.arange(0, max(all_FID), round(max(all_FID)/30,2)))
     plt.plot(Epoch_Training_orig,all_FID,label = 'Lowest FID', marker='o', color='g', ms = 20, markevery=[position])
     
     plt.xlabel('Epochs')
     plt.ylabel('FID')
     plt.title('FID during training')
-    plt.rcParams.update({'font.size': 16})
     plt.legend()
     
         
