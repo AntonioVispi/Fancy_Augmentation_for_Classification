@@ -192,8 +192,21 @@ Classifier_Dataset
                 ├── "Class_2"
                 └── "Class_3"  
 ```
-Now that the dataset(s) are defined,we move on to the training phase. to do so, it is recommended to use the Train_Classifier.py function. Note that the latter is not a command line, so it is recommended to use Train_Classifier.py offline, in order to be able to insert all the settings necessary for the specific case of the user.
-Alternatively, you can use the code made available on Colab.
+Now that the dataset(s) are defined, we move on to the training phase. To do so, it is recommended to use the `Train_Classifier.py` function. Note that the latter is not a command line, so it is recommended to use `Train_Classifier.py` offline, in order to be able to insert all the settings necessary for the specific case of the user.
+Alternatively, you can use the code made available on Colab***.
+
+Once the training is finished, it could be useful to view the trend of the accuracies and losses, on the training set and on the validation set,  for example to understand if overfitting has occurred. To do this, the `show_classifier_graphs.py` function was implemented. In order to use it, it is necessary to go inside the training output folder; there will be a .json file containing the training data. Use the latter as input to the `show_classifier_graphs.py` function.
+
+Then, to see the training graphs, type:
+```
+cd Fancy_Augmentation_for_Classification
+python show_classifier_graphs.py --path_in_json /.../example_20221123_093800.log.json \
+--path_out /.../your_output_folder
+```
+
+
+
+
 
 
 
