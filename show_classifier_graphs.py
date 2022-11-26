@@ -8,6 +8,7 @@ Created on Wed Nov  9 17:03:26 2022
 """
 
 import argparse
+import os
 import json
 import matplotlib.pyplot as plt
 import numpy as np
