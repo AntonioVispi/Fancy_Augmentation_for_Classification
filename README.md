@@ -132,9 +132,73 @@ Dataset_Fake
   .
   └── Fake_Class_n
 ```
+Furthermore, we will also need the unbalanced dataset, which will also need to be done this way:
+```bash
+Unbalanced_Dataset
+  │  
+  ├── Class_1
+  ├── Class_2
+  ├── Class_3
+  .
+  .
+  .
+  └── Class_n
+```
+Be careful to keep the same class order between the fake dataset and the unbalanced dataset.
+
 Now we need to define the dataset that will be given to the classifier.
 
 Two different modes have been made available. The first method of defining the dataset consists in balancing the classes, through traditional increases (elastic distortions, flips, crops, rotations), based on the most numerous class. Talking about the function `Classic_Balanced_Classifier_Dataset.py`.
-The other method consists in bridging the imbalance of the classes through the Fake images, generated in the previous step: `Dataset_Fake`. Then, through the function `Fake_Balanced_Classifier_Dataset.py` we will proceed with the creation of the dataset for the classifier.
+The other method consists in bridging the imbalance of the classes through the Fake images, generated in the previous step: `Dataset_Fake`. Then, through the function `Fake_Balanced_Classifier_Dataset.py` we will proceed with the creation of the dataset balanced with Fake images for the classifier.
+
+In case you have not done the installations in the GAN section, but you started from the Classification section, then perform the following installations. Otherwise, skip the next step:
+```
+git clone https://github.com/AntonioVispi/Fancy_Augmentation_for_Classification.git
+cd Fancy_Augmentation_for_Classification
+pip install -U albumentations
+```
+To balance the dataset with classical methods, run the following block:
+```
+python Classic_Balanced_Classifier_Dataset.py --path_in /.../Unbalanced_Dataset \
+--path_out /.../Classifier_Dataset
+```
+To balance the dataset with Fake images, run the following block:
+```
+python Fake_Balanced_Classifier_Dataset.py --path_in /.../Unbalanced_Dataset \
+--path_in_fake /.../Dataset_Fake \
+--path_out /.../Classifier_Dataset
+```
+At this point, regardless of how the dataset has been balanced, the final dataset that will be used to train the classifier will look exactly like this (Suppose we have only 3 classes):
+```bash
+Classifier_Dataset
+  │  
+  ├── test_set
+  │          └── test_set
+  │                     ├── Class_1
+  │                     ├── Class_2
+  │                     └── Class_3
+  ├── training_set
+  │          └── training_set
+  │                     ├── Class_1
+  │                     ├── Class_2
+  │                     └── Class_3
+  ├── val_set
+  │          └── val_set
+  │                     ├── Class_1
+  │                     ├── Class_2
+  │                     └── Class_3                        
+  └── classes.txt
+                ├── "Class_1"
+                ├── "Class_2"
+                └── "Class_3"  
+```
+Now that the dataset(s) are defined,we move on to the training phase. to do so, it is recommended to use the Train_Classifier.py function. Note that the latter is not a command line, so it is recommended to use Train_Classifier.py offline, in order to be able to insert all the settings necessary for the specific case of the user.
+Alternatively, you can use the code made available on Colab.
+
+
+
+
+
+
 
 
