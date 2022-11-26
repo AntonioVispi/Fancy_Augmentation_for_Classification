@@ -20,7 +20,9 @@ def load_json_arr(json_path):
             lines.append(json.loads(line))
     return lines
 
-def training_graphs(path_in_json,path_out): 
+def training_graphs(path_in_json,path_out):
+    
+    os.makedirs(path_out, exist_ok = True)
 
     experiment_metrics = load_json_arr(path_in_json)
 
