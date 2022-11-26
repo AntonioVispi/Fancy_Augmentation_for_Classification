@@ -42,8 +42,8 @@ pip install mmcv -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/in
 
 ### Clone and install MMClassification
 
-git clone https://github.com/open-mmlab/mmclassification.git
-cd mmclassification
+git clone https://github.com/open-mmlab/mmclassification.git  # If MMClassification has already been cloned, do not run this line.
+cd mmclassification                                           # Move into MMClassification.
 
 
 # Install MMClassification from source
@@ -61,7 +61,7 @@ print(mmcls.__version__)
 ls /.../mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py
 
 # Specify the path of the config file.
-config_file = '/.../mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py'
+config_file = '/.../mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py'  # Look for the configuration corresponding to the EfficientNet-B4
 
 import mmcv
 from mmcls.apis import inference_model, init_model, show_result_pyplot
@@ -69,6 +69,7 @@ from mmcls.apis import inference_model, init_model, show_result_pyplot
 """## Complete preparation of training setup
 
  In this example, a dataset with 5 classes from ISIC was used.
+ In this phase, the training and data processing settings are customized.
 
 """
 
@@ -82,7 +83,7 @@ cfg.model.head.topk = (1, )
 
 cfg.model.head.cal_acc = True     
 
-cfg.device='cuda'    # cuda is GPU on Colab
+cfg.device='cuda'    # cuda corresponds to GPU on Colab
 
 cfg.workflow = [('train',1),('val',1)]   
 ################################################ 
@@ -159,9 +160,9 @@ cfg.gpu_ids = range(1)
 """# Classifier training
 Make sure you have a large GPU. The A100 is recommended.
 """
-
-### Train the model
-
+#########################
+#   Train the model     #
+#########################
 import time
 import mmcv
 import os.path as osp
