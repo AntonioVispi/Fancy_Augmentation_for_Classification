@@ -53,21 +53,7 @@ def make_dataset(path_in,path_in_fake,path_out):
       else:
         pass
     
-    # Specify the file name
-    file = 'classes.txt'
-        
-    # Creating a file at specified location
-    with open(os.path.join(path_out+'/', file), 'w') as fp:
-        pass
-        # To write data to new file uncomment
-        string=''
-        for i in range(0,Num_Classes):string = string+directory[i]+'\n'
-        fp.write(string)
-          
-    # After creating 
-    print("File .txt just created:")
-    print('\n')
-    print(string)
+####
     
     for i in range(0,Num_Classes):
       support = counter(path_in+'/'+(directory[i]))
