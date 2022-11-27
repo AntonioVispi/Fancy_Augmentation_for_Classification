@@ -20,7 +20,10 @@ def counter(directory):
 def make_dataset(path_in,path_in_fake,path_out):
 
     directory = os.listdir(path_in)
+    directory.sort()
     directory_fake = os.listdir(path_in_fake)
+    directory_fake.sort()
+    
     Num_Classes = len(directory)
     
     Attributes_Vector = []    # If the classes are written correctly, execution can continue.
