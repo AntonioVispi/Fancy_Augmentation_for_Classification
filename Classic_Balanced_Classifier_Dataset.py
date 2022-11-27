@@ -426,22 +426,6 @@ def Classic_Balance(path_in,path_out):
     
     print('Image splitting is 70% for the training set, 20% for the test set, and 10% for the validation set.')
     print('\n')
-      
-    # Specify the file name
-    file = 'classes.txt'
-    
-    # Creating a file at specified location
-    with open(os.path.join(path_out+'/Classifier_dataset', file), 'w') as fp:
-        pass
-        # To write data to new file uncomment
-        string=''
-        for i in range(0,Num_Classes):string = string+directory[i]+'\n'
-        fp.write(string)
-      
-    # After creating 
-    print("File .txt just created:")
-    print('\n')
-    print(string)
     
     
     for i in range (0,Num_Classes):
