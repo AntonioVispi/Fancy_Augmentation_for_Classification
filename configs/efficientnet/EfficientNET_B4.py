@@ -11,14 +11,41 @@ _base_ = [
     '../_base_/default_runtime.py',
 ]
 
+# ---- Model configs ----
+# Here we use init_cfg to load pre-trained model.
+# In this way, only the weights of backbone will be loaded.
+# And modify the num_classes to match our dataset.
+
+model = dict(
+        init_cfg = dict(
+            type='Pretrained', 
+            checkpoint='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Output_EfficientNet_Controlled/Output_Controlled_Train_Orig_Baseline/epoch_100.pth'
+    ),
+    head=dict(
+        num_classes=5,
+        topk = (1, ) 
+    ))
+
+workflow = [('train',1),('val',1)]
+
+
+########################################
+
 # dataset settings
 dataset_type = 'CustomDataset'
 
+classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   #Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
+
 img_norm_cfg = dict(
-    mean=[0, 0, 0], std=[1, 1, 1], to_rgb=False)
+    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='Resize', size=380),
+    dict(
+        type='RandomResizedCrop',
+        size=380,
+        efficientnet_style=True,
+        interpolation='bicubic'),
+    dict(type='RandomFlip', flip_prob=0.5, direction='horizontal'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='ImageToTensor', keys=['img']),
     dict(type='ToTensor', keys=['gt_label']),
@@ -26,12 +53,39 @@ train_pipeline = [
 ]
 test_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='Resize', size=380),
+    dict(
+        type='CenterCrop',
+        crop_size=380,
+        efficientnet_style=True,
+        interpolation='bicubic'),
     dict(type='Normalize', **img_norm_cfg),
     dict(type='ImageToTensor', keys=['img']),
     dict(type='Collect', keys=['img'])
 ]
+
+# ---- Dataset configs ----
 data = dict(
-    train=dict(pipeline=train_pipeline),
-    val=dict(pipeline=test_pipeline),
-    test=dict(pipeline=test_pipeline))
+    # Specify the batch size and number of workers in each GPU.
+    # Please configure it according to your hardware.
+    
+    workers_per_gpu=10,
+    # Specify the training dataset type and path
+    train=dict(
+        type=dataset_type,
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/training_set/training_set',
+        classes= classes,
+        pipeline=train_pipeline),
+    # Specify the validation dataset type and path
+    val=dict(
+        type=dataset_type,
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/val_set/val_set',
+        ann_file= None ,
+        classes= classes,
+        pipeline=test_pipeline),
+    # Specify the test dataset type and path
+    test=dict(
+        type=dataset_type,
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/test_set/test_set',
+        ann_file= None ,
+        classes= classes,
+        pipeline=test_pipeline))
