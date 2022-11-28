@@ -213,8 +213,10 @@ Below is an example of the graphs obtained during a training of the EfficientNet
 We continue with the test of the trained model.
 
 Warning: if changes have been made to the train settings, with respect to 
-those proposed in this repository, it is crucial to make the same changes to `Fancy_Augmentation_for_Classification/configs/efficientnet/EfficientNET_B4.py`.
+those proposed in this repository, it is crucial to make the same changes to `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py`.
 Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase.
+
+In any case, you have to insert in `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test (file `.pth`), and the paths of your dataset: the same inserted in the training phase, that are training, val and test sets.
 
 
 
