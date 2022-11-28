@@ -265,7 +265,7 @@ pip install torchcam
 ```
 The rest of the installations have already been done, but still they are at the beginning of the `Inference_and_Saliency_map.py` file, for completeness.
 
-Again, it is recommended to install `Inference_and_Saliency_map.py`  offline, to be able to enter the settings that suit your case, such as the specific classes you have.
+Again, it is recommended to use `Inference_and_Saliency_map.py`  offline, to be able to enter the settings that suit your case, such as the specific classes you have.
 
 If you follow the instructions contained in `Inference_and_Saliency_map.py`, adapted to your case, the result will be, for example, the following:
 
