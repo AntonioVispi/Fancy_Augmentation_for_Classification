@@ -94,6 +94,9 @@ cfg.lr_config = dict(policy='step', step=[30, 45, 68, 110, 140, 145], gamma=0.31
 ################################################ 
 # dataset settings
 dataset_type = 'CustomDataset'
+
+classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   #Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
+
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -126,17 +129,17 @@ cfg.data.workers_per_gpu = 10                 # This depends on the specific mac
 
 # Specify the path and meta files of training dataset
 cfg.data.train.data_prefix = '/.../training_set/training_set'
-cfg.data.train.classes = '/.../classes.txt'
+cfg.data.train.classes = classes
 
 # Specify the path and meta files of validation dataset
 cfg.data.val.data_prefix = '/.../val_set/val_set'
 cfg.data.val.ann_file = None
-cfg.data.val.classes = '/.../classes.txt'
+cfg.data.val.classes = classes
 
 # Specify the path and meta files of test dataset
 cfg.data.test.data_prefix = '/.../test_set/test_set'
 cfg.data.test.ann_file = None
-cfg.data.test.classes = '/.../classes.txt'
+cfg.data.test.classes = classes
 
 
 
