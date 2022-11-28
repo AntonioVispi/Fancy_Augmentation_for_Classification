@@ -200,13 +200,13 @@ For more information about the training settings, consult the source: [MMClassif
 Once the training is finished, it could be useful to view the trend of the accuracies and losses, on the training set and on the validation set,  for example to understand if overfitting has occurred. To do this, the `show_classifier_graphs.py` function was implemented. 
 In order to use it, it is necessary to go inside the training output folder; there will be a `.json` file containing the training data. Use the latter as input to the `show_classifier_graphs.py` function. While in the output folder the image will be saved with the name of `Graphs.png`
 
-Then, to see the training graphs, type:
+Thus, to see the training graphs, type:
 ```
 cd Fancy_Augmentation_for_Classification
 python show_classifier_graphs.py --path_in_json /.../example_20221123_093800.log.json \
 --path_out /.../your_output_folder
 ```
-Below is an example of the graphs obtained during a training of the EfficientNet-B4.
+Below is an example of the graphs obtained during a training of the EfficientNet-B4 with the settings used in `Train_Classifier.py`.
 ![Train_Classifier_Graphs](https://user-images.githubusercontent.com/102518682/204105299-9aef5d8e-6ffe-4234-a383-5810c43094ca.jpg)
 
 
