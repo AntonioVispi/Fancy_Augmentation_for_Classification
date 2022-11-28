@@ -182,22 +182,19 @@ Classifier_Dataset
   │                     ├── Class_1
   │                     ├── Class_2
   │                     └── Class_3
-  ├── val_set
-  │          └── val_set
-  │                     ├── Class_1
-  │                     ├── Class_2
-  │                     └── Class_3                        
-  └── classes.txt
-                ├── "Class_1"
-                ├── "Class_2"
-                └── "Class_3"  
+  └── val_set
+             └── val_set
+                        ├── Class_1
+                        ├── Class_2
+                        └── Class_3                        
+ 
 ```
 For example, inside `Class_1` there will be images related to `Class_1` and so on.
 
 Now that the dataset(s) are defined, we move on to the training phase. To do so, it is recommended to use the `Train_Classifier.py` function. Note that the latter is not a command line, so it is recommended to use `Train_Classifier.py` offline, in order to be able to insert all the settings necessary for the specific case of the user. 
 Alternatively, you can use the code made available on Colab***.
 
-For more information consult the source: [MMClassification](https://github.com/open-mmlab/mmclassification.git).
+For more information about the training settings, consult the source: [MMClassification](https://github.com/open-mmlab/mmclassification.git).
 
 Once the training is finished, it could be useful to view the trend of the accuracies and losses, on the training set and on the validation set,  for example to understand if overfitting has occurred. To do this, the `show_classifier_graphs.py` function was implemented. 
 In order to use it, it is necessary to go inside the training output folder; there will be a `.json` file containing the training data. Use the latter as input to the `show_classifier_graphs.py` function. While in the output folder the image will be saved with the name of `Graphs.png`
