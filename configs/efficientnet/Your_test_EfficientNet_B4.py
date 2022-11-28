@@ -22,10 +22,10 @@ _base_ = [
 model = dict(
         init_cfg = dict(
             type='Pretrained', 
-            checkpoint='/.../epoch_142.pth'             # Enter the epoch on which you want to do the test.
+            checkpoint='/.../epoch_142.pth'             # Enter the epoch on which you want to do the test. Ex: epoch 142.
     ),
     head=dict(
-        num_classes=5,                                  # Enter the same number of classes as in the train phase
+        num_classes=5,                                  # Enter the same number of classes as in the train phase. Ex:5 in this case.
         topk = (1, ) 
     ))
 
@@ -34,7 +34,9 @@ workflow = [('train',1),('val',1)]
 # dataset settings
 dataset_type = 'CustomDataset'
 
-classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   #Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
+classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   # Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
+                                                # Ex: in this case, those are the same names as the train phase classes, and in the same order.
+                                                # In general, if we had 3 classes it would be: ['Class_1', 'Class_2', 'Class_3'].
 #
 # Data Pipeline: Make sure it is the same as the training phase
 #
