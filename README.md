@@ -261,11 +261,15 @@ precision_recall_f1(pred, dataset.get_gt_labels(),average_mode='none')
 ## Inference & Saliency map
 in order to view the saliency map, first of all, install:
 ```
-!pip install torchcam
+pip install torchcam
 ```
-The rest of the installations have already been done, but still they are at the beginning of the supplied.py file, for completeness.
+The rest of the installations have already been done, but still they are at the beginning of the `Inference_and_Saliency_map.py` file, for completeness.
 
-Again, it is recommended to install ...py offline, to be able to enter the settings that suit your case, such as the specific classes you have.
+Again, it is recommended to install `Inference_and_Saliency_map.py`  offline, to be able to enter the settings that suit your case, such as the specific classes you have.
+
+If you follow the instructions contained in `Inference_and_Saliency_map.py`, adapted to your case, the result will be, for example, the following:
+
+![Mel_Norm_4](https://user-images.githubusercontent.com/102518682/204402509-a072bc59-fceb-4842-9635-732c809ffe55.png)
 
 
 
