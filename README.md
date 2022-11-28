@@ -190,6 +190,7 @@ Classifier_Dataset
  
 ```
 For example, inside `Class_1` there will be images related to `Class_1` and so on.
+Note: `Classic_Balanced_Classifier_Dataset.py` will generate two folders in the desired path, one relating to the balanced dataset, another relating to the complete dataset for the classifier; while `Fake_Balanced_Classifier_Dataset.py` will directly generate the complete dataset for the classifier, without any other folders.
 
 Now that the dataset(s) are defined, we move on to the training phase. To do so, it is recommended to use the `Train_Classifier.py` function. Note that the latter is not a command line, so it is recommended to use `Train_Classifier.py` offline, in order to be able to insert all the settings necessary for the specific case of the user. 
 Alternatively, you can use the code made available on Colab***.
