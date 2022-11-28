@@ -36,7 +36,7 @@ dataset_type = 'CustomDataset'
 
 classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   #Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
 #
-# Pipeline: Make sure it is the same as the training phase
+# Data Pipeline: Make sure it is the same as the training phase
 #
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
