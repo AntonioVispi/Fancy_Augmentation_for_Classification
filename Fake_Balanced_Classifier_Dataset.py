@@ -10,6 +10,8 @@ import os
 import random
 import skimage.io as img
 import numpy as np
+from PIL import ImageFile
+
 
 def counter(directory):
   k=0
@@ -78,6 +80,7 @@ def make_dataset(path_in,path_in_fake,path_out):
       else:
         pass
       percentages.append([directory[i],round(support, 3)])
+    ImageFile.LOAD_TRUNCATED_IMAGES = True  
     print('Dataset creation is in progress...')
     
     for i in range (0,Num_Classes):
