@@ -251,6 +251,19 @@ This is an example of the result with a net trained with the procedure described
 
 ![conf_matrix](https://user-images.githubusercontent.com/102518682/204387381-a1e8b058-4df7-4844-bd08-b5a0b3e48fcb.png)
 
+Finally: Precision, Recall, F1 Score.
+Specify if you are interested in the values of the individual classes: average_mode = 'none'.
+Or to average values across all classes: average_mode = 'macro'. Please, run:
+```
+from mmcls.core.evaluation import precision_recall_f1
+precision_recall_f1(pred, dataset.get_gt_labels(),average_mode='none')
+```
+## Inference & Saliency map
+in order to view the saliency map, first of all, install:
+```
+!pip install torchcam
+```
+The rest of the installations have already been done, but still they are at the beginning of the supplied.py file, for completeness.
 
 
 
