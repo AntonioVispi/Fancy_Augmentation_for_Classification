@@ -209,7 +209,8 @@ python show_classifier_graphs.py --path_in_json /.../example_20221123_093800.log
 Below is an example of the graphs obtained during a training of the EfficientNet-B4 with the settings used in `Train_Classifier.py`.
 ![Train_Classifier_Graphs](https://user-images.githubusercontent.com/102518682/204105299-9aef5d8e-6ffe-4234-a383-5810c43094ca.jpg)
 
-
+## Testing the model
+We continue with the test of the trained model.
 
 
 
