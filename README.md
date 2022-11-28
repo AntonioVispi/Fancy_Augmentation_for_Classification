@@ -214,10 +214,42 @@ We continue with the test of the trained model.
 
 Warning: if changes have been made to the train settings, with respect to 
 those proposed in this repository, it is crucial to make the same changes to `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py`.
-Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase.
+Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase(If any changes were made to it).
 
-In any case, you have to insert in `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test (file `.pth`), and the paths of your dataset: the same inserted in the training phase, that are training, val and test sets.
+In any case, you have to insert in `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test (file `.pth`), and the paths of your dataset: the same inserted in the training phase, at training, val and test sets.
+Therefore, once you have made sure of what has been explained above, you can proceed to test the model trained on the test set.
 
+Assuming that all setups needed in this phase have already been done in the training phase, run the following block to calculate the average accuracy top-1 across all test images (Ex: with the checkpoint saved at epoch 142):
+```
+cd mmclassification
+python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py \
+/.../epoch_142.pth \
+--metrics accuracy --metric-options topk=1
+```
+For generation , and saving in the desired output folder, of `.pkl` file that contains all the details of the results on the images of the Test Set:
+```
+python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py \
+/.../epoch_142.pth \
+--out /.../your_output_path/Results.pkl --out-items class_scores all
+```
+For calculate the Confusion Matrix on the Test Set, please run:
+```
+import mmcv
+from mmcls.datasets import build_dataset
+from mmcls.core.evaluation import calculate_confusion_matrix
+cfg = mmcv.Config.fromfile('/.../Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py')
+dataset = build_dataset(cfg.data.test)
+pred = mmcv.load('/.../your_output_path/Results.pkl')['class_scores']
+matrix = calculate_confusion_matrix(pred, dataset.get_gt_labels())
+print(matrix)
+
+import matplotlib.pyplot as plt
+plt.imshow(matrix)   
+plt.show()
+```
+This is an example of the result with a net trained with the procedure described up to now:
+
+![conf_matrix](https://user-images.githubusercontent.com/102518682/204387381-a1e8b058-4df7-4844-bd08-b5a0b3e48fcb.png)
 
 
 
