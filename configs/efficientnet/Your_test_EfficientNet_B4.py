@@ -29,10 +29,10 @@ model = dict(
         topk = (1, ) 
     ))
 
-workflow = [('train',1),('val',1)]
+workflow = [('train',1),('val',1)]                      # Depends on the specific machine
 
 # dataset settings
-dataset_type = 'CustomDataset'
+dataset_type = 'CustomDataset'                          # The dataset is customized.
 
 classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   # Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
                                                 # Ex: in this case, those are the same names as the train phase classes, and in the same order.
@@ -72,7 +72,7 @@ data = dict(
     # Specify the batch size and number of workers in each GPU.
     # Please configure it according to your hardware.
     
-    workers_per_gpu=10,
+    workers_per_gpu=10,                                           # Depends on the specific machine
     # Specify the training dataset type and path
     train=dict(
         type=dataset_type,
