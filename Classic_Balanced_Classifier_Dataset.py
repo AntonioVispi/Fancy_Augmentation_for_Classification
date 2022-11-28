@@ -13,6 +13,8 @@ import random
 from skimage.color import rgb2gray
 from skimage.transform import resize
 import numpy as np
+from PIL import ImageFile
+
 
 
 
@@ -333,6 +335,7 @@ def Classic_Balance(path_in,path_out):
     Num_Classes = len(directory)
     Attributes_Vector = []
     Larger_Classes = []
+    ImageFile.LOAD_TRUNCATED_IMAGES = True
     
     for i in range(0,Num_Classes):
       support = counter(path_in+'/'+(directory[i]))
