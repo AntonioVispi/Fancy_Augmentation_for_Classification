@@ -22,10 +22,10 @@ _base_ = [
 model = dict(
         init_cfg = dict(
             type='Pretrained', 
-            checkpoint='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Output_EfficientNet_Controlled/Output_Norm_Fake/epoch_142.pth'
+            checkpoint='/.../epoch_142.pth'             # Enter the epoch on which you want to do the test.
     ),
     head=dict(
-        num_classes=5,
+        num_classes=5,                                  # Enter the same number of classes as in the train phase
         topk = (1, ) 
     ))
 
@@ -35,7 +35,9 @@ workflow = [('train',1),('val',1)]
 dataset_type = 'CustomDataset'
 
 classes = ['AKIEC', 'BCC', 'KL', 'MEL', 'NV']   #Enter the exact class names, and enter them in the order they appear in the training, test, and validation sets.
-
+#
+# Pipeline: Make sure it is the same as the training phase
+#
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -72,20 +74,20 @@ data = dict(
     # Specify the training dataset type and path
     train=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/training_set/training_set',
+        data_prefix='/.../training_set/training_set',   # Enter the path of the training set.
         classes= classes,
         pipeline=train_pipeline),
     # Specify the validation dataset type and path
     val=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/val_set/val_set',
+        data_prefix='/.../val_set/val_set',             # Enter the path of the val set.
         ann_file= None ,
         classes= classes,
         pipeline=test_pipeline),
     # Specify the test dataset type and path
     test=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/test_set/test_set',
+        data_prefix='/.../test_set/test_set',           # Enter the path of the test set.
         ann_file= None ,
         classes= classes,
         pipeline=test_pipeline))
