@@ -332,6 +332,7 @@ def Classic_Balance(path_in,path_out):
     os.makedirs(path_out+'/Classifier_dataset', exist_ok = True)
     
     directory = os.listdir(path_in)
+    directory.sort()
     Num_Classes = len(directory)
     Attributes_Vector = []
     Larger_Classes = []
