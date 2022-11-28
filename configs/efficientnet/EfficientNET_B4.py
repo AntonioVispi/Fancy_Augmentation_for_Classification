@@ -11,6 +11,9 @@ _base_ = [
     '../_base_/default_runtime.py',
 ]
 
+
+
+
 # ---- Model configs ----
 # Here we use init_cfg to load pre-trained model.
 # In this way, only the weights of backbone will be loaded.
@@ -19,7 +22,7 @@ _base_ = [
 model = dict(
         init_cfg = dict(
             type='Pretrained', 
-            checkpoint='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Output_EfficientNet_Controlled/Output_Controlled_Train_Orig_Baseline/epoch_100.pth'
+            checkpoint='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Output_EfficientNet_Controlled/Output_Norm_Fake/epoch_142.pth'
     ),
     head=dict(
         num_classes=5,
@@ -27,9 +30,6 @@ model = dict(
     ))
 
 workflow = [('train',1),('val',1)]
-
-
-########################################
 
 # dataset settings
 dataset_type = 'CustomDataset'
@@ -72,20 +72,20 @@ data = dict(
     # Specify the training dataset type and path
     train=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/training_set/training_set',
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/training_set/training_set',
         classes= classes,
         pipeline=train_pipeline),
     # Specify the validation dataset type and path
     val=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/val_set/val_set',
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/val_set/val_set',
         ann_file= None ,
         classes= classes,
         pipeline=test_pipeline),
     # Specify the test dataset type and path
     test=dict(
         type=dataset_type,
-        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Original/Baseline_Orig/test_set/test_set',
+        data_prefix='/content/drive/MyDrive/GAN_FILTRATO/Classificatore_Finale/Normalized/Norm_Fake/test_set/test_set',
         ann_file= None ,
         classes= classes,
         pipeline=test_pipeline))
