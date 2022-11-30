@@ -136,21 +136,41 @@ Below is shown the example of some photos belonging to the melanoma class (MEL f
 
 ![Norm_fake_Mel](https://user-images.githubusercontent.com/102518682/203645252-4ecc3917-1684-4b5d-9ae1-faa92daf527f.jpg)
 
+Before continuing, let's leave the environment of this first part to move on to the classification environment:
+```
+conda deactivate
+```
+
 # Getting started with Classification section
 
-To proceed with the use of fake images in a classification task, it is advisable to create a folder, containing a sufficient number of fake images for each class, arranged, for example, as follows:
+Before continuing with the discussion, let's define the environment within which the part relating to classification will be carried out.
+
+```
+conda create -n Tesi_Vispi_Classifier python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision==0.11.0 -c pytorch -y
+conda activate Tesi_Vispi_Classifier
+pip install openmim
+pip install mmcv-full
+git clone https://github.com/open-mmlab/mmclassification.git
+cd mmclassification
+pip install -e .
+pip install mmcv -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.9.0/index.html
+pip install -U albumentations
+pip install torchcam
+```
+
+To proceed with the use of fake images in a classification task, it is advisable to create a folder (Ex: `Dataset_Fake`), containing a sufficient number of fake images for each class, arranged, for example, as follows:
 ```bash
 Dataset_Fake
   │  
-  ├── Fake_Class_1
-  ├── Fake_Class_2
-  ├── Fake_Class_3
+  ├── Class_1
+  ├── Class_2
+  ├── Class_3
   .
   .
   .
-  └── Fake_Class_n
+  └── Class_n
 ```
-Furthermore, we will also need the unbalanced dataset, which will also need to be done this way:
+Furthermore, we will also need the unbalanced dataset with real images, which will also need to be done this way:
 ```bash
 Unbalanced_Dataset
   │  
@@ -162,8 +182,8 @@ Unbalanced_Dataset
   .
   └── Class_n
 ```
-Be careful to keep the same class order between the fake dataset and the unbalanced dataset.
-
+## Be careful to keep the same class order between the fake dataset and the unbalanced dataset. Also class names must be identical between real and fake images.
+************
 Now we need to define the dataset that will be given to the classifier.
 
 Two different modes have been made available. The first method of defining the dataset consists in balancing the classes, through traditional increases (elastic distortions, flips, crops, rotations), based on the most numerous class. Talking about the function `Classic_Balanced_Classifier_Dataset.py`.
