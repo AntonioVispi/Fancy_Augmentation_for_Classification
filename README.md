@@ -7,13 +7,19 @@ This work was done specifically for dermoscopic images. Images are from the ISIC
 
 # Getting started with GAN section
 
-The first phase is the creation of the dataset. please install:
+As a first step, we clone the repository, in order to define the first working environment, so then do the necessary installations.
 ```
 git clone https://github.com/AntonioVispi/Fancy_Augmentation_for_Classification.git
 cd Fancy_Augmentation_for_Classification
+conda env create -f environment.yml
+conda activate Tesi_Vispi_GAN
 pip install -U albumentations
+python -m pip install psutil
 ```
-(Optional step) If among the classes of your dataset, there is one class that is too numerous compared to the others, it is possible to select a subset of better images. The number of images you want will be selected. The selected images have the best resolution of all.
+The entire first part, relating to StyleGAN3, can be performed within the first environment that has been defined.
+We now begin the definition of the dataset.
+
+(Optional step) If among the classes of your dataset, there is one class that is too numerous compared to the others, it is possible to select a subset of better images. The number of images you want will be selected. The selected images are simultaneously the heaviest, in terms of pixels, and the most resolute in terms of sharpness.
 
 Enter the path of the too numerous class `path_in` and the path where you want the class with the desired number of images to be saved `path_out`. Also enter the number of images you want to keep. Ex: 5000.
 ```
@@ -37,8 +43,21 @@ pip install Ninja
 cd stylegan2-ada-pytorch-multiclass-labels
 python make_json_labels.py --input_folder=/.../Dataset_Training --output_folder=/.../Dataset_Training
 ```
-## Note: It is advisable to view the contents of the .json file obtained in this last step to note the correspondence between the labels and the classes. This annotation will be useful in the inference phase of the trained StyleGAN3. Ex: AKIEC corresponds to label 0, BCC corresponds to label 1 etc...
-After this last operation, the folder with the dataset should look like this:
+The result of the previous operation should be the following.
+Before:
+```bash
+Dataset_Training
+  │  
+  ├── Class_1
+  ├── Class_2
+  ├── Class_3
+  .
+  .
+  .  
+  └── Class_n
+```
+
+After:
 ```bash
 Dataset_Training
   │  
@@ -52,20 +71,19 @@ Dataset_Training
   │   
   └── dataset.json
 ```
+## Note: It is advisable to view the contents of the .json file obtained in this last step to note the correspondence between the labels and the classes. This annotation will be useful in the inference phase of the trained StyleGAN3. Ex: AKIEC corresponds to label 0, BCC corresponds to label 1 etc...
 
 Now that the dataset is fully defined, let's move on to the training phase of [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
 
 ```
 git clone https://github.com/NVlabs/stylegan3.git
 cd stylegan3
-conda env create -f environment.yml
-conda activate stylegan3
 ```
-Let's run the `dataset_tool.py`, which allows you to make all the images and all the labels in a format suitable for what StyleGAN 3 expects. Adjust the desired resolution. In our case 1024x1024 pixels was used.
+Let's run the `dataset_tool.py`, which allows you to make all the images and all the labels in a format suitable for what StyleGAN3 expects. Adjust the desired resolution. In our case 1024x1024 pixels was used.
 ```
 python dataset_tool.py --source /.../Dataset_Training --dest /.../Output_dataset_tool --resolution 1024x1024
 ```
-In the path `/.../Output_dataset_tool` the final dataset will be saved to train the StyleGAN3.
+In the path `/.../Output_dataset_tool` the final dataset to train the StyleGAN3 will be saved.
 
 Now let's continue with the training of StyleGAN3 with `train.py`. The following block is used to start a new training from scratch.
 For more information about the training parameters consult the source: [StyleGAN3](https://github.com/NVlabs/stylegan3.git).
