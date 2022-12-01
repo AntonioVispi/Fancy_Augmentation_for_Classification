@@ -20,24 +20,32 @@ Finally you need to enter the path of the output folder.
 """
 
 
+# Move in MMClassification
+cd mmclassification
+
+
+
 # Check MMClassification installation
 import mmcls
 print(mmcls.__version__)
 
-"""## Specify the model configuration from MMClassification"""
+""" 
+Specify the model configuration from MMClassification
+"""
 
 # Confirm the config file exists
-!ls /home/workstation-reap/mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py
+!ls /.../mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py
 
 # Specify the path of the config file.
-config_file = '/home/workstation-reap/mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py'  # Look for the configuration corresponding to the EfficientNet-B4
+config_file = '/.../mmclassification/configs/efficientnet/efficientnet-b4_8xb32_in1k.py'  # Look for the configuration corresponding to the EfficientNet-B4
 
 import mmcv
 from mmcls.apis import inference_model, init_model, show_result_pyplot
 
-"""## Complete preparation of training setup
- In this example, a dataset with 5 classes from ISIC was used.
- In this phase, the training and data processing settings are customized.
+"""
+Complete preparation of training setup
+In this example, a dataset with 5 classes from ISIC was used.
+In this phase, the training and data processing settings are customized.
 """
 
 # Load the base config file
@@ -50,7 +58,7 @@ cfg.model.head.topk = (1, )
 
 cfg.model.head.cal_acc = True     
 
-cfg.device='cuda'    # cuda corresponds to GPU on Colab
+cfg.device='cuda'    # GPU
 
 cfg.workflow = [('train',1),('val',1)]   
 ################################################ 
@@ -95,23 +103,23 @@ test_pipeline = [
 cfg.data.workers_per_gpu = 10                 # This depends on the specific machine
 
 # Specify the path and meta files of training dataset
-cfg.data.train.data_prefix = '/media/workstation-reap/Volume/Branciforti/Vispi/DATASETS_CLASSIFICATORE/Original/Orig_Plus/training_set/training_set'
+cfg.data.train.data_prefix = '/.../training_set/training_set'
 cfg.data.train.classes = classes
 
 # Specify the path and meta files of validation dataset
-cfg.data.val.data_prefix = '/media/workstation-reap/Volume/Branciforti/Vispi/DATASETS_CLASSIFICATORE/Original/Orig_Plus/val_set/val_set'
+cfg.data.val.data_prefix = '/.../val_set/val_set'
 cfg.data.val.ann_file = None
 cfg.data.val.classes = classes
 
 # Specify the path and meta files of test dataset
-cfg.data.test.data_prefix = '/media/workstation-reap/Volume/Branciforti/Vispi/DATASETS_CLASSIFICATORE/Original/Orig_Plus/test_set/test_set'
+cfg.data.test.data_prefix = '/.../test_set/test_set'
 cfg.data.test.ann_file = None
 cfg.data.test.classes = classes
 
 
 
-# Specify the work directory
-cfg.work_dir = '/media/workstation-reap/Volume/Branciforti/Vispi/Output_Orig_Plus_Classifier'
+# Specify the output work directory
+cfg.work_dir = '/.../Your_Output_Directory'
 
 
 # Config to set the checkpoint hook
@@ -127,7 +135,8 @@ set_random_seed(0, deterministic=True)
 
 cfg.gpu_ids = range(1)
 
-"""# Classifier training
+"""
+Classifier training.
 Make sure you have a large GPU. The A100 is recommended.
 """
 #########################
