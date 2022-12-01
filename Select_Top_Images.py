@@ -26,31 +26,33 @@ def estimate_sharpness_test(I):
 
   return sharpness
 
-def Top_images(path_in,path_out,top_images_num):
-  
-    os.makedirs(path_out, exist_ok = True)
 
+def Top_images(path_in,path_out,top_images_num):
+
+    os.makedirs(path_out, exist_ok = True)
+    
     directory = os.fsencode(path_in)
       
     print('Start of selection of the '+top_images_num+' top images ...')
-    list=[]
+    lista=[]
     for file in os.listdir(directory):
       filename = os.fsdecode(file)
       image = img.imread(path_in+'/'+filename)
       Sharpness = estimate_sharpness_test(image)
       Num_pixels = image.shape[0]*image.shape[1]
-      list.append([filename,Num_pixels,Sharpness])
+      lista.append([filename,Num_pixels,Sharpness])
     
+    top_images_num = int(float(top_images_num))
     
     # Sort that list by total number of pixels of image
-    byPixels = sorted(list, key=lambda item: item[1])
-    byPixels = byPixels[(len(byPixels)-round(((len(byPixels)-float(top_images_num))/2))-float(top_images_num)):len(byPixels)]
+    byPixels = sorted(lista, key=lambda item: item[1])
+    byPixels = byPixels[(len(byPixels)-round(((len(byPixels)-top_images_num)/2))-top_images_num):len(byPixels)]
     
     # Sort that list by the sharpness score of image
     bySharpness = sorted(byPixels, key=lambda item: item[2])
-    bySharpness = bySharpness[(len(bySharpness)-float(top_images_num)):len(bySharpness)]
+    bySharpness = bySharpness[(len(bySharpness)-top_images_num):len(bySharpness)]
     
-    print('Start of saving of the '+top_images_num+' top images ...')
+    print('Start of saving of the '+str(top_images_num)+' top images ...')
     i=0
     for i in range (0,len(bySharpness)):
       image = img.imread(path_in+'/'+bySharpness[i][0])
