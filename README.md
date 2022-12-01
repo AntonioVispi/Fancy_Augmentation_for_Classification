@@ -240,7 +240,7 @@ Thus, to see the training graphs, type:
 ```
 cd Fancy_Augmentation_for_Classification
 python show_classifier_graphs.py --path_in_json /.../example_20221123_093800.log.json \
---path_out /.../your_output_folder
+--path_out /.../Your_Output_Directory
 ```
 Below is an example of the graphs obtained during a training of the EfficientNet-B4 with the settings used in `Train_Classifier.py`.
 ![Train_Classifier_Graphs](https://user-images.githubusercontent.com/102518682/204105299-9aef5d8e-6ffe-4234-a383-5810c43094ca.jpg)
@@ -252,10 +252,10 @@ Warning: if changes have been made to the train settings, with respect to
 those proposed in this repository, it is crucial to make the same changes to `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py`.
 Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase(If any changes were made to it).
 
-In any case, you have to insert in `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test (file `.pth`), and the paths of your dataset: the same inserted in the training phase, at training, val and test sets.
-Therefore, once you have made sure of what has been explained above, you can proceed to test the model trained on the test set.
+In any case, you have to insert in `Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test the model (file `.pth`, in line with the entry checkpoint), and the paths of your dataset: the same inserted in the training phase, at training, val and test sets.
+Therefore, once you have made sure of what has been explained above, you can proceed to test the model on the test set.
 
-Assuming that all setups needed in this phase have already been done in the training phase, run the following block to calculate the average accuracy top-1 across all test images (Ex: with the checkpoint saved at epoch 142):
+Assuming the right changes, as explained above, have been made to `Your_test_EfficientNet_B4.py`, run the following block to calculate the average accuracy top-1 across all test images (Ex: with the checkpoint saved at epoch 142):
 ```
 cd mmclassification
 python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py \
