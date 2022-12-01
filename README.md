@@ -183,17 +183,15 @@ Unbalanced_Dataset
   └── Class_n
 ```
 ## Be careful to keep the same class order between the fake dataset and the unbalanced dataset. Also class names must be identical between real and fake images.
-********sseee****eeeeeeeeeeoooooooooo
+
 Now we need to define the dataset that will be given to the classifier.
 
 Two different modes have been made available. The first method of defining the dataset consists in balancing the classes, through traditional increases (elastic distortions, flips, crops, rotations), based on the most numerous class. Talking about the function `Classic_Balanced_Classifier_Dataset.py`.
 The other method consists in bridging the imbalance of the classes through the Fake images, generated in the previous step: `Dataset_Fake`. Then, through the function `Fake_Balanced_Classifier_Dataset.py` we will proceed with the creation of the dataset balanced with Fake images for the classifier.
 
-In case you have not done the installations in the GAN section, but you started from the Classification section, then perform the following installations. Otherwise, skip the next step:
+So, let's move on `Fancy_Augmentation_for_Classification`.
 ```
-git clone https://github.com/AntonioVispi/Fancy_Augmentation_for_Classification.git
 cd Fancy_Augmentation_for_Classification
-pip install -U albumentations
 ```
 To balance the dataset with classical methods, run the following block:
 ```
