@@ -262,7 +262,7 @@ python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficien
 /.../epoch_142.pth \
 --metrics accuracy --metric-options topk=1
 ```
-For generation , and saving in the desired output folder, of `.pkl` file that contains all the details of the results on the images of the Test Set:
+For generation , and saving in the desired output folder, a `.pkl` file that contains all the details of the results on the images of the Test Set:
 ```
 python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficientnet/Your_test_EfficientNet_B4.py \
 /.../epoch_142.pth \
@@ -295,13 +295,8 @@ from mmcls.core.evaluation import precision_recall_f1
 precision_recall_f1(pred, dataset.get_gt_labels(),average_mode='none')
 ```
 ## Inference & Saliency map
-in order to view the saliency map, first of all, install:
-```
-pip install torchcam
-```
-The rest of the installations have already been done, but still they are at the beginning of the `Inference_and_Saliency_map.py` file, for completeness.
 
-Again, it is recommended to use `Inference_and_Saliency_map.py`  offline, to be able to enter the settings that suit your case, such as the specific classes you have.
+For viewing the inference and saliency map, again, it is recommended to use `Inference_and_Saliency_map.py`  offline, in order to be able to enter the settings that suit your case, such as the specific classes you have.
 
 If you follow the instructions contained in `Inference_and_Saliency_map.py`, adapted to your case, the result will be, for example, the following:
 
