@@ -298,6 +298,8 @@ precision_recall_f1(pred, dataset.get_gt_labels(),average_mode='none')
 
 For viewing the inference and saliency map, again, it is recommended to use `Inference_and_Saliency_map.py`  offline, in order to be able to enter the settings that suit your case, such as the specific classes you have.
 
+To generate the saliency map and the inference, it is advisable to use the best network trained in this work: the one related to the Normalized Plus dataset.
+
 If you follow the instructions contained in `Inference_and_Saliency_map.py`, adapted to your case, the result will be, for example, the following:
 
 ![Mel_Norm_4](https://user-images.githubusercontent.com/102518682/204402509-a072bc59-fceb-4842-9635-732c809ffe55.png)
