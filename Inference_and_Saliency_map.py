@@ -109,7 +109,7 @@ Insert the desired image specifying the real class it belongs to. If the real cl
 ########################### enter your image
 
 # enter the full path of the image
-immagine = ('/.../Example_ISIC_0068015.png') 
+immagine = ('/.../Example_ISIC_0000029.png') 
 
 # Enter the true class of the image, if known. (Ex: AKIEC, BCC, KL, MEL, NV)
 classe_vera = 'MEL'                         
