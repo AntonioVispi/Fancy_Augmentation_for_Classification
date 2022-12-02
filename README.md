@@ -238,6 +238,7 @@ To do this, there are two useful train functions: `Train_Classifier_Fitted.py` a
 
 
 Going back to the specific case, if you want to replicate the results of this work, you have to use `Train_Classifier_Standard.py` for the blue colored datasets from this table, while `Train_Classifier_Fitted.py` for the red colored datasets of the following box:
+
 ![datasettini_nomi](https://user-images.githubusercontent.com/102518682/205365912-286ab4a7-f11c-45df-bc15-4ab97e5d158b.png)
 
 Note that Norm stands for normalized images and Orig stands for original images.
@@ -248,14 +249,7 @@ Furthermore:
 - Plus: dataset balanced with fake images + more fake images
 
 
-
-
-
-
-
-
-
-To do so, it is recommended to use the `Train_Classifier.py` function. Note that the latter is not a command line, so it is recommended to use `Train_Classifier.py` offline, in order to be able to insert all the settings necessary for the specific case of the user. 
+Note that `Train_Classifier_Fitted.py` and `Train_Classifier_Standard.py` are not a command line, so it is recommended to use them offline, in order to be able to insert all the eventual settings necessary for the specific case of the user.
 Alternatively, you can use the code made available on Colab***.
 
 For more information about the training settings, consult the source: [MMClassification](https://github.com/open-mmlab/mmclassification.git).
