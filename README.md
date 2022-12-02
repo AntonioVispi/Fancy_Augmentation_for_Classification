@@ -270,15 +270,16 @@ Below is an example of the graphs obtained during a training of the EfficientNet
 We continue with the test of the trained model. Alternatively the test script available on Colab is here*********.
 
 
-Similarly to what happened for the two train scripts, where it was decided to use one of the two configurations, the same must be used in the test phase. In particular `Fancy_Augmentation_for_Classification/configs/efficientnet/Standard_Test_EfficientNet_B4.py` should be used with datasets colored in blue in the previous box, while `Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` should be used with datasets marked in red in the previous box.
+Similarly to what happened for the two train scripts, where it was decided to use one of the two configurations, the same type must be used in the test phase. In particular `Fancy_Augmentation_for_Classification/configs/efficientnet/Standard_Test_EfficientNet_B4.py` should be used with datasets colored in blue in the previous box, while `Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` should be used with datasets marked in red in the previous box.
 
 If changes have been made to the train settings, with respect to those proposed in this repository, it is crucial to make the same changes to both `Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py`.
 Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase(If any changes were made to it).
 
-In any case, you have to insert in to both `Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py` the path corresponding to the epoch on which you want to test the model (file `.pth`, in line with the entry checkpoint), and the paths of your dataset: the same inserted in the training phase, at training, val and test sets.
-**Example: Suppose we only want to test the Norm Plus dataset, using the respective trained model available on this repository. Looking at the box, it belongs to the color red, which means that in testing I have to use the bono.path.py configuration. Since the pre-trained model is being used, I don't need to make any changes to the bono.path.py file, other than inserting the dataset paths, and the corresponding trained model path.**
+In any case, you have to insert in to both `Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py` the path corresponding to the checkpoint on which you want to test the model (file `.pth`, in line with the entry checkpoint), and the paths of your dataset: the same inserted in the training phase, at training, val and test sets.
 
-Therefore, once you have made sure of what has been explained above, you can proceed to test the model on the test set.
+**Example: Suppose we only want to test the Norm Plus dataset, using the respective trained model available on this repository. Looking at the box, it belongs to the color red, which means that in testing phase I have to use the `Fitted_Test_EfficientNet_B4.py` configuration. Since the pre-trained model is being used, I don't need to make any changes to the `Fitted_Test_EfficientNet_B4.py` file, other than inserting the dataset paths, and the corresponding trained model path.**
+
+Therefore, once the right paths have been entered, in the right configuration(`Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py`) for the dataset we want to test, we can proceed.
 
 Assuming the right changes, as explained above, have been made, for example, to `Fitted_Test_EfficientNet_B4.py`, run the following block to calculate the average accuracy top-1 across all test images (Ex: with the checkpoint saved at epoch 142):
 ```
