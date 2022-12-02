@@ -305,6 +305,11 @@ If you follow the instructions contained in `Inference_and_Saliency_map.py`, ada
 
 ![Mel_Norm_4](https://user-images.githubusercontent.com/102518682/204402509-a072bc59-fceb-4842-9635-732c809ffe55.png)
 
+At this point, you can exit this environment as well.
+```
+conda deactivate
+```
+
 
 
 
