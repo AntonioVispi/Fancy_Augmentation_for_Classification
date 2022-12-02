@@ -184,7 +184,7 @@ Unbalanced_Dataset
   .
   └── Class_n
 ```
-## Be careful to keep the same class order between the fake dataset and the unbalanced dataset. Also class names must be identical between real and fake images.
+**Be careful to keep the same class order between the fake dataset and the unbalanced dataset. Also class names must be identical between real and fake images.**
 
 Now we need to define the dataset that will be given to the classifier.
 
