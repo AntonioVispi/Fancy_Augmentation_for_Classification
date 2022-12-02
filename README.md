@@ -7,7 +7,7 @@ This work was done specifically for dermoscopic images. Images are from the ISIC
 
 # Getting started with GAN section
 
-As a first step, we clone the repository, in order to define the first working environment, so then do the necessary installations. Alternatively you can run it in Colab*********
+As a first step, we clone the repository, in order to define the first working environment, so then do the necessary installations. Alternatively you can run the GAN script in Colab*********
 ```
 git clone https://github.com/AntonioVispi/Fancy_Augmentation_for_Classification.git
 cd Fancy_Augmentation_for_Classification
