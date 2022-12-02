@@ -145,6 +145,7 @@ conda deactivate
 # Getting started with Classification section
 
 Before continuing with the discussion, let's define the environment within which the part relating to classification will be carried out.
+Alternatively you can use the classifier train script on Colab************.
 
 ```
 conda create -n Tesi_Vispi_Classifier python=3.8 pytorch=1.10 cudatoolkit=11.3 torchvision==0.11.0 -c pytorch -y
