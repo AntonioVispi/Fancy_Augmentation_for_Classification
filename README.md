@@ -250,7 +250,6 @@ Furthermore:
 
 
 Note that `Train_Classifier_Fitted.py` and `Train_Classifier_Standard.py` are not a command line, so it is recommended to use them offline, in order to be able to insert all the eventual settings necessary for the specific case of the user.
-Alternatively, you can use the code made available on Colab***.
 
 For more information about the training settings, consult the source: [MMClassification](https://github.com/open-mmlab/mmclassification.git).
 
