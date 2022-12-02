@@ -270,7 +270,8 @@ Below is an example of the graphs obtained during a training of the EfficientNet
 We continue with the test of the trained model. Alternatively the test script available on Colab is here*********.
 
 
-Similarly to what happened for the two train scripts, where it was decided to use one of the two configurations, the same type must be used in the test phase. In particular `Fancy_Augmentation_for_Classification/configs/efficientnet/Standard_Test_EfficientNet_B4.py` should be used with datasets colored in blue in the previous box, while `Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` should be used with datasets marked in red in the previous box.
+Similarly to what happened for the two train scripts, where it was decided to use one of the two configurations, the same type must be used in the test phase. 
+**In particular `Fancy_Augmentation_for_Classification/configs/efficientnet/Standard_Test_EfficientNet_B4.py` should be used with datasets colored in blue in the previous box, while `Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` should be used with datasets marked in red in the previous box.**
 
 If changes have been made to the train settings, with respect to those proposed in this repository, it is crucial to make the same changes to both `Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py`.
 Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase(If any changes were made to it).
@@ -294,7 +295,7 @@ python tools/test.py /.../Fancy_Augmentation_for_Classification/configs/efficien
 /.../epoch_142.pth \
 --out /.../your_output_path/Results.pkl --out-items class_scores all
 ```
-For calculate the Confusion Matrix on the Test Set, please run:
+For calculate the Confusion Matrix on the Test Set, using the previously generated `.pkl` file, please run:
 ```
 import mmcv
 from mmcls.datasets import build_dataset
@@ -309,7 +310,7 @@ import matplotlib.pyplot as plt
 plt.imshow(matrix)   
 plt.show()
 ```
-This is an example of the result with a net trained with the procedure described up to now:
+This is an example of confusion matrix obtained from the procedure described up to now:
 
 ![conf_matrix](https://user-images.githubusercontent.com/102518682/204387381-a1e8b058-4df7-4844-bd08-b5a0b3e48fcb.png)
 
