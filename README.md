@@ -5,7 +5,7 @@ Before discussing the steps, let's say that the repository is divided into two p
 
 This work was done specifically for dermoscopic images. Images are from the ISIC dataset.
 
-All networks trained in this work are available in the following link*************.
+All networks trained in this work are available in the following link [link](https://colab.research.google.com/drive/1id8GZbrnR42xRQlkNukFr6UXtflAXCsc?usp=share_link).
 
 # Getting started with GAN section
 
