@@ -317,7 +317,7 @@ precision_recall_f1(pred, dataset.get_gt_labels(),average_mode='none')
 
 For viewing the inference and saliency map, again, it is recommended to use `Inference_and_Saliency_map.py`  offline, in order to be able to enter the settings that suit your case, such as the specific classes you have. Otherwise you can use the [Colab](https://colab.research.google.com/drive/1MsucdDeHFre1JdPbrP3BbT-PXxHBBFuv?usp=share_link) script.
 
-To generate the saliency map and the inference, it is advisable to use (at `checkpoint_file` which is inside `Inference_and_Saliency_map.py`) the best network trained in this work: the one related to the Normalized Plus dataset.
+To generate the saliency map and the inference, it is advisable to use (at `checkpoint_file` which is inside `Inference_and_Saliency_map.py`) the best network trained in this work: the one related to the dataset balanced and augmented with only the synthetic images generated as described above in this work.
 
 If you follow the instructions contained in `Inference_and_Saliency_map.py`, adapted to your case, the result will be, for example, the following:
 
