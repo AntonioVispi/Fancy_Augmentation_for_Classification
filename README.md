@@ -262,9 +262,8 @@ Below is an example of the graphs obtained during a training of the EfficientNet
 ## Testing the model
 We continue with the test of the trained model. Alternatively the test script available on Colab is [here](https://colab.research.google.com/drive/1BU1TUPkeC865b8TAS7g5eOXY-3WePD5r?usp=share_link).
 
-
-Similarly to what happened for the two train scripts, where it was decided to use one of the two configurations, the same type must be used in the test phase. 
-**In particular `Fancy_Augmentation_for_Classification/configs/efficientnet/Standard_Test_EfficientNet_B4.py` should be used with datasets colored in blue in the previous box, while `Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` should be used with datasets marked in red in the previous box.**
+ 
+**`Fancy_Augmentation_for_Classification/configs/efficientnet/Fitted_Test_EfficientNet_B4.py` can be used to test the newly trained model with the same training setup as this work.**
 
 If changes have been made to the train settings, with respect to those proposed in this repository, it is crucial to make the same changes to both `Standard_Test_EfficientNet_B4.py` or `Fitted_Test_EfficientNet_B4.py`.
 Particular attention is paid to the number of classes, the name of the classes, the Data Pipeline, the Dataset configs: make sure they are like those set in the train phase(If any changes were made to it).
