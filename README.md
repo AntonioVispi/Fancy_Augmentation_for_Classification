@@ -121,7 +121,7 @@ The labels of the specific case are inside the .json file of the previous sectio
 You have to insert the label corresponding to the desired class in the entry: `class`.
 `trunc` stands for truncation, by default it is set to 1. For more information consult [StyleGAN3](https://github.com/NVlabs/stylegan3.git). 
 
-**Note: the following labels concern the two StyleGAN3 models trained in this work, respectively with original and normalized images.**
+**Note: the following labels concern the two StyleGAN3 models trained in this work, with dataset images.**
 ```
 example labels
 #   AKIEC = 0   #
