@@ -1,5 +1,6 @@
 # Fancy_Augmentation_for_Classification
-Tool for creating a balanced dataset, augmenting it in the classic way, and then using it to train StyleGAN3. Once the StyleGAN3 has been trained, it will be used to generate synthetic images, which will allow to increase the images available to train an MMClassification classifier (EfficientNET-B4).
+Tool to balance a dataset (unbalanced image classes), augment it in a classical way and then use it to train StyleGAN3. Once the StyleGAN3 has been trained, it will be used to generate synthetic images, which will allow to increase the available images, to then train a classifier coming from the MMClassification library (EfficientNET-B4), improving its final performance.
+
 
 Before discussing the steps, let's say that the repository is divided into two parts: the first dedicated to the reproduction of the result obtained with StyleGAN3, the second dedicated to the reproduction of the result obtained with MMClassification.
 
