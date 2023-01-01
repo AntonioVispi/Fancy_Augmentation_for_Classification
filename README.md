@@ -5,6 +5,8 @@ Before discussing the steps, let's say that the repository is divided into two p
 
 This work was done specifically for dermoscopic images. Images are from the ISIC dataset.
 
+**If you need the synthetic images developed in this work, or are interested in trained models, both GAN and classification, please write to my mail:** antoniovispi1@gmail.com
+
 
 # Getting started with GAN section
 
