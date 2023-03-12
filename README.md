@@ -60,7 +60,6 @@ Dataset_Training
   .  
   └── Class_n
 ```
-
 After:
 ```bash
 Dataset_Training
