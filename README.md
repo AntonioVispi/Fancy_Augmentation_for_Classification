@@ -145,16 +145,20 @@ Below is shown the example of some synthetic images belonging to the melanoma cl
 
 We show below other examples of synthetic images, belonging to other classes.
 
-Synthetic AKIEC clas from ISIC:
+Synthetic AKIEC class from ISIC:
+
 ![AKIEC](https://user-images.githubusercontent.com/102518682/231280152-1f12da0f-86fb-4501-8063-4024d0430f3c.jpg)
 
 Synthetic BCC class from ISIC:
+
 ![BCC](https://user-images.githubusercontent.com/102518682/231280397-baad5ca3-e4e9-4717-856f-a29b059237f9.jpg)
 
 Synthetic KL class from ISIC:
+
 ![KL](https://user-images.githubusercontent.com/102518682/231280552-f8d0c2d5-a579-4e7c-830c-b29664cdb5d9.jpg)
 
 Synthetic NV class from ISIC:
+
 ![NV](https://user-images.githubusercontent.com/102518682/231280680-8fb64ee0-93d9-4129-b9de-fc4f0c49f304.jpg)
 
 
