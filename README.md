@@ -143,6 +143,21 @@ Below is shown the example of some synthetic images belonging to the melanoma cl
 
 ![Norm_fake_Mel](https://user-images.githubusercontent.com/102518682/203645252-4ecc3917-1684-4b5d-9ae1-faa92daf527f.jpg)
 
+We show below other examples of synthetic images, belonging to other classes.
+
+Synthetic AKIEC clas from ISIC:
+![AKIEC](https://user-images.githubusercontent.com/102518682/231280152-1f12da0f-86fb-4501-8063-4024d0430f3c.jpg)
+
+Synthetic BCC class from ISIC:
+![BCC](https://user-images.githubusercontent.com/102518682/231280397-baad5ca3-e4e9-4717-856f-a29b059237f9.jpg)
+
+Synthetic KL class from ISIC:
+![KL](https://user-images.githubusercontent.com/102518682/231280552-f8d0c2d5-a579-4e7c-830c-b29664cdb5d9.jpg)
+
+Synthetic NV class from ISIC:
+![NV](https://user-images.githubusercontent.com/102518682/231280680-8fb64ee0-93d9-4129-b9de-fc4f0c49f304.jpg)
+
+
 Before continuing, let's leave the environment of this first part to move on to the classification environment:
 ```
 conda deactivate
