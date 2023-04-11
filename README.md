@@ -1,7 +1,7 @@
 # Fancy_Augmentation_for_Classification
 Tool to balance a dataset (unbalanced image classes), augment it in a classical way and then use it to train StyleGAN3. Once the StyleGAN3 has been trained, it will be used to generate synthetic images, which will allow to increase the available images, to then train a classifier coming from the MMClassification library (EfficientNET-B4), improving its final performance.
 
-This work was done specifically for dermoscopic images (ISIC dataset for example.). **However, one can use this Repository as a basis for performing the same complete procedure on completely different datasets, provided that simple changes are made to the image preprocessing:`Clean_Balancing.py`.**
+This work was done specifically for dermoscopic images (ISIC dataset for example). **However, one can use this Repository as a basis for performing the same complete procedure on completely different datasets, provided that simple changes are made to the image preprocessing:`Clean_Balancing.py`.**
 
 Before discussing the steps, let's say that the repository is divided into two parts: the first dedicated to the reproduction of the result obtained with StyleGAN3, the second dedicated to the reproduction of the result obtained with MMClassification.
 
