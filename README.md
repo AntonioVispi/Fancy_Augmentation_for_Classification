@@ -163,6 +163,7 @@ Synthetic "Nevus" (NV class from ISIC):
 
 
 
+
 Before continuing, let's leave the environment of this first part to move on to the classification environment:
 ```
 conda deactivate
