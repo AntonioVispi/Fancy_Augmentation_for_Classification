@@ -162,6 +162,7 @@ Synthetic NV class from ISIC:
 ![NV](https://user-images.githubusercontent.com/102518682/231280680-8fb64ee0-93d9-4129-b9de-fc4f0c49f304.jpg)
 
 
+
 Before continuing, let's leave the environment of this first part to move on to the classification environment:
 ```
 conda deactivate
