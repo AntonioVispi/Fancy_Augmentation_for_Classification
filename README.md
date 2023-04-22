@@ -148,19 +148,20 @@ Synthetic "Melanoma" (MEL class from ISIC):
 
 Synthetic "Actinic Keratosis" (AKIEC class from ISIC):
 
-![AKIEC](https://user-images.githubusercontent.com/102518682/231280152-1f12da0f-86fb-4501-8063-4024d0430f3c.jpg)
+![AKIEC](https://user-images.githubusercontent.com/102518682/233798660-ded1d0b3-a2e0-4704-a33a-2e07c0d8786d.jpg)
 
 Synthetic "Basal Cell Carcinoma" (BCC class from ISIC):
 
-![BCC](https://user-images.githubusercontent.com/102518682/231280397-baad5ca3-e4e9-4717-856f-a29b059237f9.jpg)
+![BCC](https://user-images.githubusercontent.com/102518682/233798675-729b312f-4240-4daa-a2c7-c9cdf1d4cad2.jpg)
 
 Synthetic "Keratosis Like" (KL class from ISIC):
 
-![KL](https://user-images.githubusercontent.com/102518682/231280552-f8d0c2d5-a579-4e7c-830c-b29664cdb5d9.jpg)
+![KL](https://user-images.githubusercontent.com/102518682/233798734-15dbf962-3d8a-4d57-b527-ea1e6dff4852.jpg)
 
 Synthetic "Nevus" (NV class from ISIC):
 
-![NV](https://user-images.githubusercontent.com/102518682/231280680-8fb64ee0-93d9-4129-b9de-fc4f0c49f304.jpg)
+![NV](https://user-images.githubusercontent.com/102518682/233798762-cfe1f4d6-516d-430a-bd5c-9a2c9a5fec1f.jpg)
+
 
 
 
